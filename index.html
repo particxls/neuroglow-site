@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ThinkAmp | Amplify Your Focus</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ThinkAmp | Focus Gear</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -49,34 +49,11 @@
       font-size: 1.2rem;
       color: #9ad2e6;
     }
-    .tabs {
-      display: flex;
-      justify-content: center;
-      margin: 40px 0 20px;
-      flex-wrap: wrap;
-    }
-    .tabs button {
-      background: #002b40;
-      color: #00eaff;
-      border: 2px solid #007ba7;
-      padding: 10px 20px;
-      margin: 5px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: 600;
-    }
-    .tabs button.active {
-      background: #00b2ff;
-      color: #000;
-    }
     .products {
-      display: none;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      padding: 20px 40px 60px;
-    }
-    .products.active {
       display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 40px;
     }
     .product {
       background: #0f2a40;
@@ -89,11 +66,12 @@
     .product img {
       max-width: 100%;
       border-radius: 8px;
+      margin-bottom: 15px;
     }
     .product h3 {
-      margin-top: 15px;
       font-size: 1.3rem;
       color: #00eaff;
+      margin: 10px 0;
     }
     .product p {
       color: #b1dbef;
@@ -137,6 +115,32 @@
       color: #9ad2e6;
       border-top: 2px solid #00b2ff;
     }
+    .section-title {
+      text-align: center;
+      font-size: 2rem;
+      margin-top: 40px;
+      color: #00eaff;
+    }
+    form {
+      max-width: 600px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #007ba7;
+      border-radius: 6px;
+      background-color: #0f2a40;
+      color: #e0f7ff;
+    }
+    button[type="submit"] {
+      background-color: #00eaff;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
@@ -147,34 +151,26 @@
       <a href="#shop">Shop</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
-      <a href="#cart">🛒 Cart (<span id="cart-count">0</span>)</a>
+      <a href="#cart">Cart (<span id="cart-count">0</span>)</a>
     </nav>
   </header>
 
   <section class="hero" id="home">
     <h2>Amplify Your Mind. Optimize Your Flow.</h2>
-    <p>ThinkAmp delivers tools that sharpen your focus, improve your workflow, and enhance cognitive clarity through tech-powered essentials.</p>
+    <p>Explore focus-enhancing tools for productivity-driven creators and professionals.</p>
   </section>
 
-  <div class="tabs" id="shop">
-    <button class="tablink active" onclick="openTab('glasses')">Blue Light Glasses</button>
-    <button class="tablink" onclick="openTab('timers')">Focus Timers</button>
-  </div>
-
-  <section class="products active" id="glasses">
+  <section class="products" id="shop">
     <div class="product">
-      <img src="https://i.imgur.com/M0hG5Ms.jpeg" alt="Blue Light Glasses">
+      <img src="https://i.postimg.cc/wRmHbmkL/blockbluelight-blue-light-blocking-glasses-amber-lens-sundown-billie-blue-blocking-glasses-black-366.webp" alt="Blue Light Glasses">
       <h3>High-Tech Blue Light Glasses</h3>
-      <p>Designed for all-day digital use, these lightweight, stylish glasses reduce eye fatigue and improve sleep patterns by blocking harmful blue light.</p>
+      <p>Stylish and functional, these blue light blocking glasses reduce eye strain and improve focus during screen time. Perfect for late-night work sessions.</p>
       <button onclick="addToCart('High-Tech Blue Light Glasses - $25')">Add to Cart - $25</button>
     </div>
-  </section>
-
-  <section class="products" id="timers">
     <div class="product">
-      <img src="https://i.imgur.com/tHcsmXA.jpeg" alt="Focus Timer">
+      <img src="https://i.postimg.cc/q6yVGdkG/shopping.webp" alt="Focus Timer">
       <h3>Focus Timer Pro</h3>
-      <p>Master your productivity with this visual Pomodoro timer. Set intervals, track break time, and stay in control of your focus zones.</p>
+      <p>Stay on task using Pomodoro intervals with this sleek digital timer. Designed for efficiency lovers who thrive on structure.</p>
       <button onclick="addToCart('Focus Timer Pro - $25')">Add to Cart - $25</button>
     </div>
   </section>
@@ -185,11 +181,20 @@
   </section>
 
   <section id="about">
-    <!-- About section can be customized later -->
+    <h2 class="section-title">About ThinkAmp</h2>
+    <p style="text-align:center; max-width:700px; margin:0 auto; color:#b1dbef;">
+      ThinkAmp is a brand built for people who live and breathe productivity. Our tools are curated to help you work smarter, stay focused, and maintain a balanced digital lifestyle. Whether you're a student, remote worker, or tech enthusiast — we're here to enhance your flow.
+    </p>
   </section>
 
   <section id="contact">
-    <!-- Contact section can be customized later -->
+    <h2 class="section-title">Contact Us</h2>
+    <form onsubmit="alert('Message sent!'); return false;">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </section>
 
   <footer>
@@ -198,15 +203,6 @@
   </footer>
 
   <script>
-    function openTab(tabId) {
-      const tabs = document.querySelectorAll('.products');
-      const buttons = document.querySelectorAll('.tablink');
-      tabs.forEach(tab => tab.classList.remove('active'));
-      buttons.forEach(btn => btn.classList.remove('active'));
-      document.getElementById(tabId).classList.add('active');
-      event.target.classList.add('active');
-    }
-
     let cart = [];
 
     function addToCart(item) {
@@ -228,4 +224,3 @@
   </script>
 </body>
 </html>
-
