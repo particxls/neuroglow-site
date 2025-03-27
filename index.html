@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ThinkAmp | Focus Gear</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -76,15 +76,21 @@
     .product p {
       color: #b1dbef;
     }
-    .product button, .product form button {
+    .product button, .product a.button-link {
       background: #00eaff;
       color: #000;
-      border: none;
+      display: inline-block;
       padding: 10px 20px;
       border-radius: 6px;
       margin: 10px 5px 0;
       cursor: pointer;
       font-weight: bold;
+      text-decoration: none;
+    }
+    .instructions {
+      font-size: 0.95rem;
+      color: #b1dbef;
+      margin-top: 10px;
     }
     #cart {
       padding: 40px;
@@ -106,6 +112,29 @@
       padding: 10px;
       margin-bottom: 10px;
       color: #e0f7ff;
+    }
+    form.shipping-form {
+      max-width: 600px;
+      margin: 20px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    form.shipping-form input {
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #007ba7;
+      background-color: #0f2a40;
+      color: #e0f7ff;
+    }
+    form.shipping-form button {
+      background-color: #00eaff;
+      color: #000;
+      font-weight: bold;
+      padding: 10px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
     }
     footer {
       background: #051d33;
@@ -138,24 +167,36 @@
       <h3>High-Tech Blue Light Glasses</h3>
       <p>Stylish and functional, these blue light blocking glasses reduce eye strain and improve focus during screen time. Perfect for late-night work sessions.</p>
       <button onclick="addToCart('High-Tech Blue Light Glasses - $25')">Add to Cart - $25</button>
-      <form action="https://buy.stripe.com/test_4gw28d0ZTaXv9Wk4gg" method="POST" target="_blank">
-        <button type="submit">Buy Now</button>
-      </form>
+      <a href="https://cash.app/$gmil07" target="_blank" class="button-link" onclick="alert('Thanks for choosing CashApp! Please complete your payment to $gmil07 and send a screenshot via email or form below.')">Pay with CashApp</a>
+      <p class="instructions">Send $25 to <strong>$gmil07</strong> on CashApp and fill out the form below to complete your order.</p>
     </div>
+
     <div class="product">
       <img src="https://images.unsplash.com/photo-1587573081218-181ec9f8a4a5?auto=format&fit=crop&w=600&q=80" alt="Focus Timer">
       <h3>Focus Timer Pro</h3>
       <p>Stay on task using Pomodoro intervals with this sleek digital timer. Designed for efficiency lovers who thrive on structure.</p>
       <button onclick="addToCart('Focus Timer Pro - $25')">Add to Cart - $25</button>
-      <form action="https://buy.stripe.com/test_eVa9CU3Mz2nT9Wk8ww" method="POST" target="_blank">
-        <button type="submit">Buy Now</button>
-      </form>
+      <a href="https://cash.app/$gmil07" target="_blank" class="button-link" onclick="alert('Thanks for choosing CashApp! Please complete your payment to $gmil07 and send a screenshot via email or form below.')">Pay with CashApp</a>
+      <p class="instructions">Send $25 to <strong>$gmil07</strong> on CashApp and fill out the form below to complete your order.</p>
     </div>
   </section>
 
   <section id="cart">
     <h2>Your Cart</h2>
     <ul id="cart-items"></ul>
+
+    <!-- form with email integration + file upload -->
+    <form class="shipping-form" id="shippingForm" enctype="multipart/form-data" action="https://formsubmit.co/support@thinkamp.tech" method="POST" onsubmit="handleSubmit(event)">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="address" placeholder="Shipping Address" required>
+      <input type="text" name="city" placeholder="City, State, ZIP" required>
+      <input type="text" name="phone" placeholder="Phone Number (optional)">
+      <input type="file" name="payment-proof" accept="image/*" required>
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+      <button type="submit">Submit Order Details</button>
+    </form>
   </section>
 
   <footer>
@@ -182,6 +223,20 @@
       });
       cartCount.textContent = cart.length;
     }
+
+    function handleSubmit(event) {
+      event.preventDefault();
+      alert('Shipping info submitted! Check your inbox for confirmation.');
+      const form = document.getElementById('shippingForm');
+      form.style.display = 'none';
+      const confirmation = document.createElement('p');
+      confirmation.textContent = 'Thank you! Your form was sent successfully.';
+      confirmation.style.textAlign = 'center';
+      confirmation.style.color = '#00eaff';
+      form.parentNode.appendChild(confirmation);
+      form.submit();
+    }
   </script>
 </body>
 </html>
+
