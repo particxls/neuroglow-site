@@ -107,6 +107,26 @@
       cursor: pointer;
       font-weight: bold;
     }
+    #cart {
+      padding: 40px;
+    }
+    #cart h2 {
+      text-align: center;
+      color: #003d99;
+    }
+    #cart ul {
+      list-style: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    #cart ul li {
+      background: #f2f7ff;
+      border: 1px solid #b3d1ff;
+      border-radius: 8px;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
     footer {
       background: #e6f0ff;
       padding: 30px 20px;
@@ -125,12 +145,13 @@
       <a href="#shop">Shop</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
+      <a href="#cart">🛒 Cart (<span id="cart-count">0</span>)</a>
     </nav>
   </header>
 
   <section class="hero" id="home">
     <h2>Amplify Your Mind. Optimize Your Flow.</h2>
-    <p>Performance gear built for thinkers, makers, creators, and doers.</p>
+    <p>ThinkAmp offers curated performance tools designed to help you focus, work smarter, and feel energized. Explore our unique product line designed for remote workers, students, and high-performers.</p>
   </section>
 
   <div class="tabs" id="shop">
@@ -145,7 +166,7 @@
       <img src="https://via.placeholder.com/250x150" alt="Blue Light Glasses">
       <h3>Blue Light Blocking Glasses</h3>
       <p>Stylish protection for your eyes — great for screen-heavy workdays.</p>
-      <button>Add to Cart - $25</button>
+      <button onclick="addToCart('Blue Light Blocking Glasses - $25')">Add to Cart - $25</button>
     </div>
   </section>
 
@@ -154,7 +175,7 @@
       <img src="https://via.placeholder.com/250x150" alt="Focus Timer">
       <h3>Smart Focus Timer</h3>
       <p>Track productivity and break time using the Pomodoro method.</p>
-      <button>Add to Cart - $30</button>
+      <button onclick="addToCart('Smart Focus Timer - $30')">Add to Cart - $30</button>
     </div>
   </section>
 
@@ -163,7 +184,7 @@
       <img src="https://via.placeholder.com/250x150" alt="Desk Mat">
       <h3>ThinkAmp Desk Mat</h3>
       <p>Give your setup a productivity boost with clean comfort and style.</p>
-      <button>Add to Cart - $28</button>
+      <button onclick="addToCart('ThinkAmp Desk Mat - $28')">Add to Cart - $28</button>
     </div>
   </section>
 
@@ -172,11 +193,24 @@
       <img src="https://via.placeholder.com/250x150" alt="Focus Tool">
       <h3>Nootropic Starter Kit</h3>
       <p>Curated supplements to support mental clarity and energy.</p>
-      <button>Add to Cart - $35</button>
+      <button onclick="addToCart('Nootropic Starter Kit - $35')">Add to Cart - $35</button>
     </div>
   </section>
 
-  <footer id="contact">
+  <section id="cart">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+  </section>
+
+  <section id="about">
+    <!-- About section can be customized later -->
+  </section>
+
+  <section id="contact">
+    <!-- Contact section can be customized later -->
+  </section>
+
+  <footer>
     <p>&copy; 2025 ThinkAmp. All rights reserved.</p>
     <p>Email: support@thinkamp.tech</p>
   </footer>
@@ -190,6 +224,26 @@
       document.getElementById(tabId).classList.add('active');
       event.target.classList.add('active');
     }
+
+    let cart = [];
+
+    function addToCart(item) {
+      cart.push(item);
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartList = document.getElementById('cart-items');
+      const cartCount = document.getElementById('cart-count');
+      cartList.innerHTML = '';
+      cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = item;
+        cartList.appendChild(li);
+      });
+      cartCount.textContent = cart.length;
+    }
   </script>
 </body>
 </html>
+
