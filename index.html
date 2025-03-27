@@ -4,50 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ThinkAmp | Amplify Your Focus</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #ffffff;
-      color: #0f1c2e;
+      font-family: 'Outfit', sans-serif;
+      background-color: #0a0a0a;
+      color: #e0f7ff;
     }
     header {
-      background: #e6f0ff;
+      background: #051d33;
       padding: 20px;
       text-align: center;
-      border-bottom: 2px solid #b3d1ff;
+      border-bottom: 2px solid #00b2ff;
     }
     header h1 {
       margin: 0;
       font-size: 2.5rem;
-      color: #0056cc;
+      color: #00eaff;
     }
     nav {
       margin-top: 10px;
     }
     nav a {
-      color: #0f1c2e;
+      color: #c2e9ff;
       margin: 0 15px;
       text-decoration: none;
       font-weight: 600;
     }
     nav a:hover {
-      color: #0056cc;
+      color: #00eaff;
     }
     .hero {
       text-align: center;
       padding: 80px 20px 40px;
-      background: #f2f7ff;
+      background: #0f2a40;
     }
     .hero h2 {
       font-size: 2.8rem;
       margin-bottom: 20px;
-      color: #003d99;
+      color: #00d4ff;
     }
     .hero p {
       font-size: 1.2rem;
-      color: #4d5d70;
+      color: #9ad2e6;
     }
     .tabs {
       display: flex;
@@ -56,9 +56,9 @@
       flex-wrap: wrap;
     }
     .tabs button {
-      background: #e6f0ff;
-      color: #003d99;
-      border: 2px solid #b3d1ff;
+      background: #002b40;
+      color: #00eaff;
+      border: 2px solid #007ba7;
       padding: 10px 20px;
       margin: 5px;
       border-radius: 6px;
@@ -66,8 +66,8 @@
       font-weight: 600;
     }
     .tabs button.active {
-      background: #0056cc;
-      color: #ffffff;
+      background: #00b2ff;
+      color: #000;
     }
     .products {
       display: none;
@@ -79,12 +79,12 @@
       display: grid;
     }
     .product {
-      background: #f9fbff;
-      border: 1px solid #dbe7ff;
+      background: #0f2a40;
+      border: 1px solid #007ba7;
       border-radius: 12px;
       padding: 20px;
       text-align: center;
-      box-shadow: 0 4px 8px rgba(0, 86, 204, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 183, 255, 0.15);
     }
     .product img {
       max-width: 100%;
@@ -93,13 +93,14 @@
     .product h3 {
       margin-top: 15px;
       font-size: 1.3rem;
+      color: #00eaff;
     }
     .product p {
-      color: #4d5d70;
+      color: #b1dbef;
     }
     .product button {
-      background: #0056cc;
-      color: #ffffff;
+      background: #00eaff;
+      color: #000;
       border: none;
       padding: 10px 20px;
       border-radius: 6px;
@@ -112,7 +113,7 @@
     }
     #cart h2 {
       text-align: center;
-      color: #003d99;
+      color: #00eaff;
     }
     #cart ul {
       list-style: none;
@@ -121,19 +122,20 @@
       margin: 0 auto;
     }
     #cart ul li {
-      background: #f2f7ff;
-      border: 1px solid #b3d1ff;
+      background: #0f2a40;
+      border: 1px solid #007ba7;
       border-radius: 8px;
       padding: 10px;
       margin-bottom: 10px;
+      color: #e0f7ff;
     }
     footer {
-      background: #e6f0ff;
+      background: #051d33;
       padding: 30px 20px;
       text-align: center;
       font-size: 0.9rem;
-      color: #4d5d70;
-      border-top: 2px solid #b3d1ff;
+      color: #9ad2e6;
+      border-top: 2px solid #00b2ff;
     }
   </style>
 </head>
@@ -151,49 +153,29 @@
 
   <section class="hero" id="home">
     <h2>Amplify Your Mind. Optimize Your Flow.</h2>
-    <p>ThinkAmp offers curated performance tools designed to help you focus, work smarter, and feel energized. Explore our unique product line designed for remote workers, students, and high-performers.</p>
+    <p>ThinkAmp delivers tools that sharpen your focus, improve your workflow, and enhance cognitive clarity through tech-powered essentials.</p>
   </section>
 
   <div class="tabs" id="shop">
     <button class="tablink active" onclick="openTab('glasses')">Blue Light Glasses</button>
     <button class="tablink" onclick="openTab('timers')">Focus Timers</button>
-    <button class="tablink" onclick="openTab('mats')">Desk Mats</button>
-    <button class="tablink" onclick="openTab('tools')">Mind Tools</button>
   </div>
 
   <section class="products active" id="glasses">
     <div class="product">
-      <img src="https://via.placeholder.com/250x150" alt="Blue Light Glasses">
-      <h3>Blue Light Blocking Glasses</h3>
-      <p>Stylish protection for your eyes — great for screen-heavy workdays.</p>
-      <button onclick="addToCart('Blue Light Blocking Glasses - $25')">Add to Cart - $25</button>
+      <img src="https://cdn.openart.ai/uploads/image_example/1711474191741.png" alt="Blue Light Glasses">
+      <h3>High-Tech Blue Light Glasses</h3>
+      <p>Designed for all-day digital use, these lightweight, stylish glasses reduce eye fatigue and improve sleep patterns by blocking harmful blue light.</p>
+      <button onclick="addToCart('High-Tech Blue Light Glasses - $25')">Add to Cart - $25</button>
     </div>
   </section>
 
   <section class="products" id="timers">
     <div class="product">
-      <img src="https://via.placeholder.com/250x150" alt="Focus Timer">
-      <h3>Smart Focus Timer</h3>
-      <p>Track productivity and break time using the Pomodoro method.</p>
-      <button onclick="addToCart('Smart Focus Timer - $30')">Add to Cart - $30</button>
-    </div>
-  </section>
-
-  <section class="products" id="mats">
-    <div class="product">
-      <img src="https://via.placeholder.com/250x150" alt="Desk Mat">
-      <h3>ThinkAmp Desk Mat</h3>
-      <p>Give your setup a productivity boost with clean comfort and style.</p>
-      <button onclick="addToCart('ThinkAmp Desk Mat - $28')">Add to Cart - $28</button>
-    </div>
-  </section>
-
-  <section class="products" id="tools">
-    <div class="product">
-      <img src="https://via.placeholder.com/250x150" alt="Focus Tool">
-      <h3>Nootropic Starter Kit</h3>
-      <p>Curated supplements to support mental clarity and energy.</p>
-      <button onclick="addToCart('Nootropic Starter Kit - $35')">Add to Cart - $35</button>
+      <img src="https://cdn.openart.ai/uploads/image_example/1711474199923.png" alt="Focus Timer">
+      <h3>Focus Timer Pro</h3>
+      <p>Master your productivity with this visual Pomodoro timer. Set intervals, track break time, and stay in control of your focus zones.</p>
+      <button onclick="addToCart('Focus Timer Pro - $25')">Add to Cart - $25</button>
     </div>
   </section>
 
@@ -236,7 +218,7 @@
       const cartList = document.getElementById('cart-items');
       const cartCount = document.getElementById('cart-count');
       cartList.innerHTML = '';
-      cart.forEach((item, index) => {
+      cart.forEach((item) => {
         const li = document.createElement('li');
         li.textContent = item;
         cartList.appendChild(li);
@@ -246,4 +228,5 @@
   </script>
 </body>
 </html>
+
 
