@@ -76,13 +76,13 @@
     .product p {
       color: #b1dbef;
     }
-    .product button {
+    .product button, .product form button {
       background: #00eaff;
       color: #000;
       border: none;
       padding: 10px 20px;
       border-radius: 6px;
-      margin-top: 10px;
+      margin: 10px 5px 0;
       cursor: pointer;
       font-weight: bold;
     }
@@ -115,32 +115,6 @@
       color: #9ad2e6;
       border-top: 2px solid #00b2ff;
     }
-    .section-title {
-      text-align: center;
-      font-size: 2rem;
-      margin-top: 40px;
-      color: #00eaff;
-    }
-    form {
-      max-width: 600px;
-      margin: 20px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    input, textarea {
-      padding: 10px;
-      border: 1px solid #007ba7;
-      border-radius: 6px;
-      background-color: #0f2a40;
-      color: #e0f7ff;
-    }
-    button[type="submit"] {
-      background-color: #00eaff;
-      color: #000;
-      font-weight: bold;
-      cursor: pointer;
-    }
   </style>
 </head>
 <body>
@@ -149,8 +123,6 @@
     <nav>
       <a href="#home">Home</a>
       <a href="#shop">Shop</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
       <a href="#cart">Cart (<span id="cart-count">0</span>)</a>
     </nav>
   </header>
@@ -162,39 +134,28 @@
 
   <section class="products" id="shop">
     <div class="product">
-      <img src="https://i.postimg.cc/wRmHbmkL/blockbluelight-blue-light-blocking-glasses-amber-lens-sundown-billie-blue-blocking-glasses-black-366.webp" alt="Blue Light Glasses">
+      <img src="https://images.unsplash.com/photo-1619603364939-bab6f301b8e6?auto=format&fit=crop&w=600&q=80" alt="Blue Light Glasses">
       <h3>High-Tech Blue Light Glasses</h3>
       <p>Stylish and functional, these blue light blocking glasses reduce eye strain and improve focus during screen time. Perfect for late-night work sessions.</p>
       <button onclick="addToCart('High-Tech Blue Light Glasses - $25')">Add to Cart - $25</button>
+      <form action="https://buy.stripe.com/test_4gw28d0ZTaXv9Wk4gg" method="POST" target="_blank">
+        <button type="submit">Buy Now</button>
+      </form>
     </div>
     <div class="product">
-      <img src="https://i.postimg.cc/q6yVGdkG/shopping.webp" alt="Focus Timer">
+      <img src="https://images.unsplash.com/photo-1587573081218-181ec9f8a4a5?auto=format&fit=crop&w=600&q=80" alt="Focus Timer">
       <h3>Focus Timer Pro</h3>
       <p>Stay on task using Pomodoro intervals with this sleek digital timer. Designed for efficiency lovers who thrive on structure.</p>
       <button onclick="addToCart('Focus Timer Pro - $25')">Add to Cart - $25</button>
+      <form action="https://buy.stripe.com/test_eVa9CU3Mz2nT9Wk8ww" method="POST" target="_blank">
+        <button type="submit">Buy Now</button>
+      </form>
     </div>
   </section>
 
   <section id="cart">
     <h2>Your Cart</h2>
     <ul id="cart-items"></ul>
-  </section>
-
-  <section id="about">
-    <h2 class="section-title">About ThinkAmp</h2>
-    <p style="text-align:center; max-width:700px; margin:0 auto; color:#b1dbef;">
-      ThinkAmp is a brand built for people who live and breathe productivity. Our tools are curated to help you work smarter, stay focused, and maintain a balanced digital lifestyle. Whether you're a student, remote worker, or tech enthusiast — we're here to enhance your flow.
-    </p>
-  </section>
-
-  <section id="contact">
-    <h2 class="section-title">Contact Us</h2>
-    <form onsubmit="alert('Message sent!'); return false;">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
   </section>
 
   <footer>
